@@ -1,0 +1,104 @@
+﻿using AutoMapper;
+using Medication_Reminder_API.DTOS;
+using Medication_Reminder_API.Enums;
+using Medication_Reminder_API.Services;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+
+namespace Medication_Reminder_API.Controllers
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    [Authorize]
+    public class DoseLogController : BaseController
+    {
+        private readonly IMapper _mapper;
+        private readonly IDoseLogService _doseLogService;
+
+        public DoseLogController(ApplicationDbContext context, IMapper mapper, IDoseLogService doseLogService)
+            : base(context)
+        {
+            _mapper = mapper;
+            _doseLogService = doseLogService;
+        }
+
+        [HttpGet("Patient/{patientId}")]
+        public IActionResult GetDoses(int patientId)
+        {
+            if (!CanAccessPatient(patientId)) return Forbid();
+
+            var doses = _doseLogService.GetDosesForPatient(patientId);
+            if (!doses.Any())
+                return NotFound("No doses found for this patient.");
+            return Ok(doses);
+        }
+
+        [HttpGet("{id}")]
+        public IActionResult GetDoseById(int id)
+        {
+            var dose = _doseLogService.GetDoseById(id);
+            if (dose == null) return NotFound();
+
+            if (!CanAccessPatient(dose.PatientID)) return Forbid();
+            return Ok(dose);
+        }
+
+        [HttpGet("Patient/{patientId}/Status")]
+        public IActionResult GetDosesByStatus(int patientId, [FromQuery] DoseStatus status)
+        {
+            if (!CanAccessPatient(patientId)) return Forbid();
+
+            var doses = _doseLogService.GetDosesForPatient(patientId, status);
+            if (!doses.Any())
+                return NotFound($"No {status} doses found for this patient.");
+            return Ok(doses);
+        }
+
+        [HttpGet("Patient/{patientId}/Search")]
+        public IActionResult GetDosesByMedicationName(int patientId, [FromQuery] string name)
+        {
+            if (!CanAccessPatient(patientId)) return Forbid();
+
+            var doses = _doseLogService.GetDosesByMedicationName(patientId, name);
+            if (!doses.Any())
+                return NotFound($"No doses found with medication name containing '{name}'.");
+            return Ok(doses);
+        }
+
+        [HttpPost("AddDose")]
+        public ActionResult<DoseLogDTO> AddDose([FromBody] AddDoseDTO dto)
+        {
+            if (!CanAccessPatient(dto.PatientID)) return Forbid();
+
+            try
+            {
+                var dose = _doseLogService.AddDose(dto);
+                return Ok(dose);
+            }
+            catch (ArgumentException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpPatch("{id}/TakenTime")]
+        public IActionResult UpdateTakenTime(int id, [FromBody] DateTime takenTime, [FromServices] IMedicationService medService)
+        {
+            var updatedDose = _doseLogService.UpdateTakenTime(id, takenTime, medService);
+            if (updatedDose == null) return NotFound("Dose not found.");
+
+            if (!CanAccessPatient(updatedDose.PatientID)) return Forbid();
+
+            var allDoses = _doseLogService.GetDosesForPatient(updatedDose.PatientID);
+            return Ok(allDoses);
+        }
+
+        [HttpGet("medications/{medicationId}/doses/takenCount")]
+        public IActionResult GetTakenDoseCount(int medicationId)
+        {
+            // هنا مفيش patientId، يبقى ده ممكن يستخدمه أي حد عنده صلاحية على الداتا كلها (مثلا Admin)
+            var count = _doseLogService.GetTakenDoseCount(medicationId);
+            return Ok(count);
+        }
+    }
+}

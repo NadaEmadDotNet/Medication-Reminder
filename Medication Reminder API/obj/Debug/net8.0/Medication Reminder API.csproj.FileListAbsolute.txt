@@ -1,0 +1,148 @@
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\appsettings.Development.json
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\appsettings.json
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\Medication Reminder API.staticwebassets.endpoints.json
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\Medication Reminder API.exe
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\Medication Reminder API.deps.json
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\Medication Reminder API.runtimeconfig.json
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\Medication Reminder API.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\Medication Reminder API.pdb
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\Humanizer.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Design.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\Microsoft.OpenApi.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\Mono.TextTemplating.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\System.CodeDom.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\System.Composition.AttributedModel.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\System.Composition.Convention.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\System.Composition.Hosting.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\System.Composition.Runtime.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\System.Composition.TypedParts.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.resources.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.resources.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.resources.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.resources.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.resources.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.resources.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.resources.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.resources.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.resources.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.resources.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\obj\Debug\net8.0\Medication Reminder API.csproj.AssemblyReference.cache
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\obj\Debug\net8.0\rpswa.dswa.cache.json
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\obj\Debug\net8.0\Medication Reminder API.GeneratedMSBuildEditorConfig.editorconfig
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\obj\Debug\net8.0\Medication Reminder API.AssemblyInfoInputs.cache
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\obj\Debug\net8.0\Medication Reminder API.AssemblyInfo.cs
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\obj\Debug\net8.0\Medication Reminder API.csproj.CoreCompileInputs.cache
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\obj\Debug\net8.0\Medication Reminder API.MvcApplicationPartsAssemblyInfo.cs
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\obj\Debug\net8.0\Medication Reminder API.MvcApplicationPartsAssemblyInfo.cache
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\obj\Debug\net8.0\rjimswa.dswa.cache.json
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\obj\Debug\net8.0\scopedcss\bundle\Medication Reminder API.styles.css
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\obj\Debug\net8.0\staticwebassets.build.json
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\obj\Debug\net8.0\staticwebassets.build.json.cache
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\obj\Debug\net8.0\staticwebassets.development.json
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\obj\Debug\net8.0\Medicati.8A550D5F.Up2Date
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\obj\Debug\net8.0\Medication Reminder API.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\obj\Debug\net8.0\refint\Medication Reminder API.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\obj\Debug\net8.0\Medication Reminder API.pdb
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\obj\Debug\net8.0\Medication Reminder API.genruntimeconfig.cache
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\obj\Debug\net8.0\ref\Medication Reminder API.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\Azure.Core.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\Azure.Identity.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\Microsoft.Data.SqlClient.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\Microsoft.Identity.Client.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\Microsoft.Identity.Client.Extensions.Msal.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\System.Drawing.Common.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\System.Memory.Data.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\System.Runtime.Caching.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\System.Security.Permissions.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\System.Windows.Extensions.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\AutoMapper.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\FluentValidation.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\FluentValidation.AspNetCore.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\Castle.Core.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Proxies.dll
+F:\Medication Reminder API\Medication Reminder API\Medication Reminder API\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
