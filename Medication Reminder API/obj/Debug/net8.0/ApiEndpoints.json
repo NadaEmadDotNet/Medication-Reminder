@@ -1,6 +1,6 @@
 [
   {
-    "ContainingType": "Medication_Reminder_API.Controllers.AdminController",
+    "ContainingType": "Medication_Reminder_API.Api.Controllers.AdminController",
     "Method": "GetAllUsers",
     "RelativePath": "api/Admin/AllUsers",
     "HttpMethod": "GET",
@@ -10,7 +10,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Medication_Reminder_API.Controllers.AdminController",
+    "ContainingType": "Medication_Reminder_API.Api.Controllers.AdminController",
     "Method": "CreateUser",
     "RelativePath": "api/Admin/CreateUser",
     "HttpMethod": "POST",
@@ -26,7 +26,23 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Medication_Reminder_API.Controllers.AuthenticationController",
+    "ContainingType": "Medication_Reminder_API.Api.Controllers.AuthenticationController",
+    "Method": "ChangePassword",
+    "RelativePath": "api/Authentication/change-password",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Medication_Reminder_API.Application.DTOS.ChangePasswordDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Medication_Reminder_API.Api.Controllers.AuthenticationController",
     "Method": "Login",
     "RelativePath": "api/Authentication/Login",
     "HttpMethod": "POST",
@@ -35,14 +51,14 @@
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "Medication_Reminder_API.DTOS.LoginDTO",
+        "Type": "Medication_Reminder_API.Application.DTOS.LoginDTO",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Medication_Reminder_API.Controllers.CareGiverController",
+    "ContainingType": "Medication_Reminder_API.Api.Controllers.CareGiverController",
     "Method": "GetAll",
     "RelativePath": "api/CareGiver",
     "HttpMethod": "GET",
@@ -52,7 +68,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Medication_Reminder_API.Controllers.CareGiverController",
+    "ContainingType": "Medication_Reminder_API.Api.Controllers.CareGiverController",
     "Method": "Edit",
     "RelativePath": "api/CareGiver/{id}",
     "HttpMethod": "PUT",
@@ -66,14 +82,14 @@
       },
       {
         "Name": "caregiver",
-        "Type": "Medication_Reminder_API.Models.Caregiver",
+        "Type": "Medication_Reminder_API.Domain.Models.Caregiver",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Medication_Reminder_API.Controllers.CareGiverController",
+    "ContainingType": "Medication_Reminder_API.Api.Controllers.CareGiverController",
     "Method": "Delete",
     "RelativePath": "api/CareGiver/{id}",
     "HttpMethod": "DELETE",
@@ -89,7 +105,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Medication_Reminder_API.Controllers.CareGiverController",
+    "ContainingType": "Medication_Reminder_API.Api.Controllers.CareGiverController",
     "Method": "AssignPatient",
     "RelativePath": "api/CareGiver/AssignPatient",
     "HttpMethod": "POST",
@@ -98,14 +114,14 @@
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "Medication_Reminder_API.DTOS.CaregiverAssignDTO",
+        "Type": "Medication_Reminder_API.Application.DTOS.CaregiverAssignDTO",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Medication_Reminder_API.Controllers.CareGiverController",
+    "ContainingType": "Medication_Reminder_API.Api.Controllers.CareGiverController",
     "Method": "GetMyPatients",
     "RelativePath": "api/CareGiver/MyPatients",
     "HttpMethod": "GET",
@@ -115,7 +131,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Medication_Reminder_API.Controllers.CareGiverController",
+    "ContainingType": "Medication_Reminder_API.Api.Controllers.CareGiverController",
     "Method": "GetByName",
     "RelativePath": "api/CareGiver/search",
     "HttpMethod": "GET",
@@ -131,7 +147,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Medication_Reminder_API.Controllers.DoseLogController",
+    "ContainingType": "Medication_Reminder_API.Api.Controllers.DoseLogController",
     "Method": "GetDoseById",
     "RelativePath": "api/DoseLog/{id}",
     "HttpMethod": "GET",
@@ -147,7 +163,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Medication_Reminder_API.Controllers.DoseLogController",
+    "ContainingType": "Medication_Reminder_API.Api.Controllers.DoseLogController",
     "Method": "UpdateTakenTime",
     "RelativePath": "api/DoseLog/{id}/TakenTime",
     "HttpMethod": "PATCH",
@@ -163,12 +179,22 @@
         "Name": "takenTime",
         "Type": "System.DateTime",
         "IsRequired": true
+      },
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pagesize",
+        "Type": "System.Int32",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Medication_Reminder_API.Controllers.DoseLogController",
+    "ContainingType": "Medication_Reminder_API.Api.Controllers.DoseLogController",
     "Method": "AddDose",
     "RelativePath": "api/DoseLog/AddDose",
     "HttpMethod": "POST",
@@ -194,7 +220,7 @@
     ]
   },
   {
-    "ContainingType": "Medication_Reminder_API.Controllers.DoseLogController",
+    "ContainingType": "Medication_Reminder_API.Api.Controllers.DoseLogController",
     "Method": "GetTakenDoseCount",
     "RelativePath": "api/DoseLog/medications/{medicationId}/doses/takenCount",
     "HttpMethod": "GET",
@@ -210,7 +236,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Medication_Reminder_API.Controllers.DoseLogController",
+    "ContainingType": "Medication_Reminder_API.Api.Controllers.DoseLogController",
     "Method": "GetDoses",
     "RelativePath": "api/DoseLog/Patient/{patientId}",
     "HttpMethod": "GET",
@@ -221,12 +247,22 @@
         "Name": "patientId",
         "Type": "System.Int32",
         "IsRequired": true
+      },
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Medication_Reminder_API.Controllers.DoseLogController",
+    "ContainingType": "Medication_Reminder_API.Api.Controllers.DoseLogController",
     "Method": "GetDosesByMedicationName",
     "RelativePath": "api/DoseLog/Patient/{patientId}/Search",
     "HttpMethod": "GET",
@@ -247,7 +283,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Medication_Reminder_API.Controllers.DoseLogController",
+    "ContainingType": "Medication_Reminder_API.Api.Controllers.DoseLogController",
     "Method": "GetDosesByStatus",
     "RelativePath": "api/DoseLog/Patient/{patientId}/Status",
     "HttpMethod": "GET",
@@ -263,22 +299,43 @@
         "Name": "status",
         "Type": "System.String",
         "IsRequired": false
+      },
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pagesize",
+        "Type": "System.Int32",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Medication_Reminder_API.Controllers.MedicationsController",
+    "ContainingType": "Medication_Reminder_API.Api.Controllers.MedicationsController",
     "Method": "GetAllMedications",
     "RelativePath": "api/Medications",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Medication_Reminder_API.Controllers.MedicationsController",
+    "ContainingType": "Medication_Reminder_API.Api.Controllers.MedicationsController",
     "Method": "Add",
     "RelativePath": "api/Medications",
     "HttpMethod": "POST",
@@ -287,14 +344,14 @@
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "Medication_Reminder_API.DTOS.MedicationDTO",
+        "Type": "Medication_Reminder_API.Application.DTOS.MedicationDTO",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Medication_Reminder_API.Controllers.MedicationsController",
+    "ContainingType": "Medication_Reminder_API.Api.Controllers.MedicationsController",
     "Method": "EditMedication",
     "RelativePath": "api/Medications/{medicationId}",
     "HttpMethod": "PUT",
@@ -308,14 +365,14 @@
       },
       {
         "Name": "medication",
-        "Type": "Medication_Reminder_API.DTOS.MedicationDTO",
+        "Type": "Medication_Reminder_API.Application.DTOS.MedicationDTO",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Medication_Reminder_API.Controllers.MedicationsController",
+    "ContainingType": "Medication_Reminder_API.Api.Controllers.MedicationsController",
     "Method": "DeleteMedication",
     "RelativePath": "api/Medications/{medicationId}",
     "HttpMethod": "DELETE",
@@ -331,7 +388,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Medication_Reminder_API.Controllers.MedicationsController",
+    "ContainingType": "Medication_Reminder_API.Api.Controllers.MedicationsController",
     "Method": "GetAllMedicationsForPatient",
     "RelativePath": "api/Medications/patient/{patientId}",
     "HttpMethod": "GET",
@@ -347,7 +404,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Medication_Reminder_API.Controllers.MedicationsController",
+    "ContainingType": "Medication_Reminder_API.Api.Controllers.MedicationsController",
     "Method": "GetByName",
     "RelativePath": "api/Medications/search",
     "HttpMethod": "GET",
@@ -363,7 +420,28 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Medication_Reminder_API.Controllers.PatientController",
+    "ContainingType": "Medication_Reminder_API.Api.Controllers.PatientController",
+    "Method": "GetAllPatients",
+    "RelativePath": "api/Patient",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Medication_Reminder_API.Api.Controllers.PatientController",
     "Method": "EditPatient",
     "RelativePath": "api/Patient/{id}",
     "HttpMethod": "PUT",
@@ -384,7 +462,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Medication_Reminder_API.Controllers.PatientController",
+    "ContainingType": "Medication_Reminder_API.Api.Controllers.PatientController",
     "Method": "DeletePatient",
     "RelativePath": "api/Patient/{id}",
     "HttpMethod": "DELETE",
@@ -400,7 +478,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Medication_Reminder_API.Controllers.PatientController",
+    "ContainingType": "Medication_Reminder_API.Api.Controllers.PatientController",
     "Method": "AssignMedicationToPatient",
     "RelativePath": "api/Patient/{patientId}/AssignMedication/{medicationId}",
     "HttpMethod": "POST",
@@ -421,17 +499,28 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Medication_Reminder_API.Controllers.PatientController",
-    "Method": "GetAllPatients",
-    "RelativePath": "api/Patient/All",
-    "HttpMethod": "GET",
+    "ContainingType": "Medication_Reminder_API.Api.Controllers.PatientController",
+    "Method": "ChangePatientStatus",
+    "RelativePath": "api/Patient/{patientId}/status",
+    "HttpMethod": "PATCH",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "patientId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "UpdatePatientStatusDto",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Medication_Reminder_API.Controllers.PatientController",
+    "ContainingType": "Medication_Reminder_API.Api.Controllers.PatientController",
     "Method": "GetByName",
     "RelativePath": "api/Patient/ByName",
     "HttpMethod": "GET",
