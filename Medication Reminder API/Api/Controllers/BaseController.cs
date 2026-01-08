@@ -1,4 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore; // مهم للـ AnyAsync
+using System.Security.Claims;
+using System.Threading.Tasks;
 
 namespace Medication_Reminder_API.Api.Controllers
 {
@@ -14,12 +17,13 @@ namespace Medication_Reminder_API.Api.Controllers
         }
 
         protected string GetCurrentUserId() =>
-      User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
 
         protected string GetCurrentUserRole() =>
             User.FindFirst(ClaimTypes.Role)?.Value;
 
-        protected bool CanAccessPatient(int patientId)
+        // ✨ التعديل هنا
+        protected async Task<bool> CanAccessPatientAsync(int patientId)
         {
             var role = GetCurrentUserRole();
             var userId = GetCurrentUserId();
@@ -28,13 +32,16 @@ namespace Medication_Reminder_API.Api.Controllers
                 return true;
 
             if (role == "Patient")
-                return _context.Patients.Any(p => p.PatientID == patientId && p.UserId == userId);
+                return await _context.Patients
+                    .AnyAsync(p => p.PatientID == patientId && p.UserId == userId);
 
             if (role == "Caregiver")
-                return _context.PatientCaregivers.Any(pc => pc.PatientID == patientId && pc.Caregiver.UserId == userId);
+                return await _context.PatientCaregivers
+                    .AnyAsync(pc => pc.PatientID == patientId && pc.Caregiver.UserId == userId);
 
             if (role == "Doctor")
-                return _context.DoctorPatients.Any(dp => dp.PatientId == patientId && dp.Doctor.UserId == userId);
+                return await _context.DoctorPatients
+                    .AnyAsync(dp => dp.PatientId == patientId && dp.Doctor.UserId == userId);
 
             return false;
         }

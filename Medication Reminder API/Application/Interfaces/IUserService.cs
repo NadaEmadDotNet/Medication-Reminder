@@ -1,8 +1,10 @@
 ﻿using Medication_Reminder_API.Application.DTOS;
 using Medication_Reminder_API.Infrastructure;
+using Microsoft.AspNetCore.Identity;
 
 public interface IUserService
 {
-    public  Task<ApplicationUser> Createuser(CreateUserDTO dto);
-    public Task<List<UserDto>> GetAllUsersAsync();
+      Task<ApplicationUser> Createuser(CreateUserDTO dto);
+     Task<List<UserDto>> GetAllUsersAsync();
+    Task<ServiceResult> ChangeUserStatusAsync(string userId, UpdateUserStatusDto dto, UserManager<ApplicationUser> userManager);
 }

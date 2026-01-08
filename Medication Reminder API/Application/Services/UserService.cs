@@ -100,5 +100,18 @@ namespace Medication_Reminder_API.Services.Interfaces
 
             return cachedUsers;
         }
+        public async Task<ServiceResult> ChangeUserStatusAsync(string userId, UpdateUserStatusDto dto, UserManager<ApplicationUser> userManager)
+        {
+            var user = await userManager.FindByIdAsync(userId);
+            if (user == null)
+                return new ServiceResult { Success = false, Message = "User not found" };
+
+            user.IsActive = dto.IsActive;
+            user.IsVisible = dto.IsVisible;
+            user.TokenVersion++; // لمنع أي توكن قديم
+            await userManager.UpdateAsync(user);
+
+            return new ServiceResult { Success = true, Message = "User status updated successfully" };
+        }
     }
 }

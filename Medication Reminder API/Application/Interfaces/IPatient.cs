@@ -12,10 +12,7 @@ namespace Medication_Reminder_API.Application.Interfaces
             Task<PatientDto> AddAsync(PatientDto dto);
             Task<PatientDto?> EditPatientAsync(int id, PatientDto dto);
             Task<PatientDto?> DeletePatientAsync(int id);
-            Task<ServiceResult> AssignMedicationToPatientAsync(int patientId, int medicationId);
-             Task<PatientDto> ChangePatientStatusAsync(int patientId, UpdatePatientStatusDto dto);
-  
-
+           Task<ServiceResult> AssignMedicationToPatientAsync(int patientId, int medicationId);
     }
 
 }

@@ -38,6 +38,7 @@ namespace Medication_Reminder_API.Api.Controllers
 
 
         [HttpGet("ByName")]
+        [Authorize(Roles = "Admin,Doctor")]
         public async Task<IActionResult> GetByName([FromQuery] string name)
         {
             var patients = await _patientService.GetByNameAsync(name);
@@ -90,23 +91,6 @@ namespace Medication_Reminder_API.Api.Controllers
                 return NotFound("Patient not found.");
 
             return Ok(deletedPatient);
-        }
-        [HttpPatch("{patientId}/status")]
-        public async Task<IActionResult> ChangePatientStatus(int patientId, UpdatePatientStatusDto dto)
-        {
-            try
-            {
-                var updatedPatient = await _patientService.ChangePatientStatusAsync(patientId, dto);
-                return Ok(updatedPatient);
-            }
-            catch (KeyNotFoundException ex)
-            {
-                return NotFound(ex.Message);
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
-            }
         }
 
     }

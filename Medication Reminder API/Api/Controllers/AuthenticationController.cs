@@ -36,6 +36,8 @@ namespace Medication_Reminder_API.Api.Controllers
             if (user == null)
                 return BadRequest("Invalid email or password");
 
+            if (!user.IsActive)
+                return Unauthorized("Account is deactivated");
 
             var isPasswordValid = await _userManager.CheckPasswordAsync(user, dto.Password);
             if (!isPasswordValid)
@@ -46,7 +48,11 @@ namespace Medication_Reminder_API.Api.Controllers
             {
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
                 new Claim(ClaimTypes.NameIdentifier, user.Id),
-                new Claim(ClaimTypes.Name, user.UserName)
+                new Claim(ClaimTypes.Name, user.UserName),
+
+                //store token version to invalidate old tokens after chane pass
+                new Claim("tokenVersion", user.TokenVersion.ToString())
+
             };
 
             var roles = await _userManager.GetRolesAsync(user);
@@ -96,6 +102,11 @@ namespace Medication_Reminder_API.Api.Controllers
 
             if (!result.Succeeded)
                 return BadRequest(result.Errors);
+
+            // زيادة TokenVersion علشان يمنع التوكن القديم من الشغل
+            user.TokenVersion++;
+                await _userManager.UpdateAsync(user);
+
             return Ok("Password changed successfully");
 
         }

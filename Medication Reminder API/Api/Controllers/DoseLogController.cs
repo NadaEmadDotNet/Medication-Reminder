@@ -23,9 +23,9 @@ namespace Medication_Reminder_API.Api.Controllers
         }
 
         [HttpGet("Patient/{patientId}")]
-        public IActionResult GetDoses(int patientId, int page = 1, int pageSize = 10)
+        public async Task<IActionResult> GetDoses(int patientId, int page = 1, int pageSize = 10)
         {
-            if (!CanAccessPatient(patientId))
+            if (!await CanAccessPatientAsync(patientId))
                 return Forbid();
 
             var doses = _doseLogService.GetDosesForPatient(patientId, null, page, pageSize);
@@ -37,19 +37,19 @@ namespace Medication_Reminder_API.Api.Controllers
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetDoseById(int id)
+        public async Task<IActionResult> GetDoseById(int id)
         {
             var dose = _doseLogService.GetDoseById(id);
             if (dose == null) return NotFound();
 
-            if (!CanAccessPatient(dose.PatientID)) return Forbid();
+            if (!await CanAccessPatientAsync(dose.PatientID)) return Forbid();
             return Ok(dose);
         }
 
         [HttpGet("Patient/{patientId}/Status")]
-        public IActionResult GetDosesByStatus(int patientId, [FromQuery] DoseStatus status, int page, int pagesize)
+        public async Task<IActionResult> GetDosesByStatus(int patientId, [FromQuery] DoseStatus status, int page, int pagesize)
         {
-            if (!CanAccessPatient(patientId)) return Forbid();
+            if (!await CanAccessPatientAsync(patientId)) return Forbid();
 
             var doses = _doseLogService.GetDosesForPatient(patientId, status, page, pagesize);
             if (doses.Data == null || !doses.Data.Any())
@@ -58,9 +58,9 @@ namespace Medication_Reminder_API.Api.Controllers
         }
 
         [HttpGet("Patient/{patientId}/Search")]
-        public IActionResult GetDosesByMedicationName(int patientId, [FromQuery] string name)
+        public async Task<IActionResult> GetDosesByMedicationName(int patientId, [FromQuery] string name)
         {
-            if (!CanAccessPatient(patientId)) return Forbid();
+            if (!await CanAccessPatientAsync(patientId)) return Forbid();
 
             var doses = _doseLogService.GetDosesByMedicationName(patientId, name);
             if (!doses.Any())
@@ -69,9 +69,9 @@ namespace Medication_Reminder_API.Api.Controllers
         }
 
         [HttpPost("AddDose")]
-        public ActionResult<DoseLogDTO> AddDose([FromBody] AddDoseDTO dto)
+        public async Task<ActionResult<DoseLogDTO>> AddDose([FromBody] AddDoseDTO dto)
         {
-            if (!CanAccessPatient(dto.PatientID)) return Forbid();
+            if (!await CanAccessPatientAsync(dto.PatientID)) return Forbid();
 
             try
             {
@@ -85,12 +85,12 @@ namespace Medication_Reminder_API.Api.Controllers
         }
 
         [HttpPatch("{id}/TakenTime")]
-        public IActionResult UpdateTakenTime(int id, [FromBody] DateTime takenTime, [FromServices] IMedicationService medService, int page, int pagesize)
+        public async Task<IActionResult> UpdateTakenTime(int id, [FromBody] DateTime takenTime, [FromServices] IMedicationService medService, int page, int pagesize)
         {
             var updatedDose = _doseLogService.UpdateTakenTime(id, takenTime, medService);
             if (updatedDose == null) return NotFound("Dose not found.");
 
-            if (!CanAccessPatient(updatedDose.PatientID)) return Forbid();
+            if (!await CanAccessPatientAsync(updatedDose.PatientID)) return Forbid();
 
             var allDoses = _doseLogService.GetDosesForPatient(updatedDose.PatientID, null, page, pagesize);
             return Ok(allDoses);

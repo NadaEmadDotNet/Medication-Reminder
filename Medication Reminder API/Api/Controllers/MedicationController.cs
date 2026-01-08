@@ -49,7 +49,7 @@ namespace Medication_Reminder_API.Api.Controllers
         [Authorize(Roles = "Patient,Doctor,Caregiver,Admin")]
         public async Task<IActionResult> GetAllMedicationsForPatient(int patientId)
         {
-            if (!CanAccessPatient(patientId)) return Forbid();
+            if (!await CanAccessPatientAsync(patientId)) return Forbid();
 
             var meds = await _medService.GetAllMedicationsForPatientAsync(patientId);
             if (!meds.Any())

@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Medication Reminder API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+823a54800d593313c63d5590b369d1b4fc910d9c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fb26b9e5ee02519433bf4dd73593d61c9edcb3d3")]
 [assembly: System.Reflection.AssemblyProductAttribute("Medication Reminder API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Medication Reminder API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

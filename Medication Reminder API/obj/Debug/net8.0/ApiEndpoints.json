@@ -11,6 +11,27 @@
   },
   {
     "ContainingType": "Medication_Reminder_API.Api.Controllers.AdminController",
+    "Method": "ChangeUserStatus",
+    "RelativePath": "api/Admin/ChangeUserStatus",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "dto",
+        "Type": "UpdateUserStatusDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Medication_Reminder_API.Api.Controllers.AdminController",
     "Method": "CreateUser",
     "RelativePath": "api/Admin/CreateUser",
     "HttpMethod": "POST",
@@ -493,27 +514,6 @@
       {
         "Name": "medicationId",
         "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Medication_Reminder_API.Api.Controllers.PatientController",
-    "Method": "ChangePatientStatus",
-    "RelativePath": "api/Patient/{patientId}/status",
-    "HttpMethod": "PATCH",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "patientId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "dto",
-        "Type": "UpdatePatientStatusDto",
         "IsRequired": true
       }
     ],

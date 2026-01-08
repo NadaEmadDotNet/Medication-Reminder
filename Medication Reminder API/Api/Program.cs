@@ -1,5 +1,7 @@
 using FluentValidation;
 using FluentValidation.AspNetCore;
+using Medication_Reminder_API.Api;
+using Medication_Reminder_API.Api.Middleware;
 using Medication_Reminder_API.Application.Interfaces;
 using Medication_Reminder_API.Application.Validators;
 using Medication_Reminder_API.Infrastructure;
@@ -10,7 +12,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
-using Medication_Reminder_API.Api;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -67,17 +68,18 @@ builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddMemoryCache();
 
 // ===== 7) CORS =====
-/*var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy(name: MyAllowSpecificOrigins,
-        policy =>
-        {
-            policy.WithOrigins("http://localhost:5174")
-             .AllowAnyHeader()
-                  .AllowAnyMethod();
-        });
-});*/
+//var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+
+//builder.Services.AddCors(options =>
+//{
+//    options.AddPolicy(name: MyAllowSpecificOrigins,
+//        policy =>
+//        {
+//            policy.WithOrigins("") 
+//                  .AllowAnyHeader()
+//                  .AllowAnyMethod();
+//        });
+//});
 
 // ===== 8) Controllers + Swagger =====
 builder.Services.AddControllers();
@@ -113,7 +115,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+app.UseMiddleware<TokenVersionMiddleware>();
 app.UseHttpsRedirection();
 //app.UseCors(MyAllowSpecificOrigins);
 app.UseAuthentication();

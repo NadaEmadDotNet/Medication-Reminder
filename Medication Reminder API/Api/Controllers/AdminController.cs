@@ -1,7 +1,9 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
-using Medication_Reminder_API.Application.Validators;
+﻿using Medication_Reminder_API.Application.Validators;
+using Medication_Reminder_API.Infrastructure;
 using Medication_Reminder_API.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Medication_Reminder_API.Api.Controllers
 {
@@ -10,10 +12,14 @@ namespace Medication_Reminder_API.Api.Controllers
     public class AdminController : ControllerBase
     {
         private readonly IUserService _userService;
+        private readonly UserManager<ApplicationUser> _userManager;
 
-        public AdminController(IUserService userService)
+
+        public AdminController(IUserService userService, UserManager<ApplicationUser> userManager)
         {
             _userService = userService;
+            _userManager = userManager;
+
         }
 
         [Authorize(Roles = "Admin")]
@@ -25,7 +31,8 @@ namespace Medication_Reminder_API.Api.Controllers
 
             try
             {
-                // السيرفيس نفسه مسؤول عن إضافة ال Identity User + إضافة record في الجدول المناسب
+          
+              
                 var user = await _userService.Createuser(dto);
 
                 return Ok(new
@@ -51,6 +58,15 @@ namespace Medication_Reminder_API.Api.Controllers
                 return NotFound("No users found.");
 
             return Ok(users);
+        }
+
+        [Authorize(Roles = "Admin")]
+        [HttpPost("ChangeUserStatus")]
+        public async Task<IActionResult> ChangeUserStatus(string userId, [FromBody] UpdateUserStatusDto dto)
+        {
+            var result = await _userService.ChangeUserStatusAsync(userId, dto, _userManager);
+            if (!result.Success) return NotFound(result.Message);
+            return Ok(result.Message);
         }
     }
 }

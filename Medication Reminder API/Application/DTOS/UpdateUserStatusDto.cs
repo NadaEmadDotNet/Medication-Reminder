@@ -1,4 +1,4 @@
-﻿public class UpdatePatientStatusDto
+﻿public class UpdateUserStatusDto
 {
     public bool IsActive { get; set; }
     public bool IsVisible { get; set; }

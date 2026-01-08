@@ -16,8 +16,7 @@ namespace Medication_Reminder_API.Services
         private readonly ApplicationDbContext _context;
         private readonly IMapper _mapper;
 
-
-        public PatientService(ApplicationDbContext context, IMapper mapper )
+        public PatientService(ApplicationDbContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;
@@ -28,15 +27,14 @@ namespace Medication_Reminder_API.Services
             int page = 1, int pageSize = 10)
         {
             IQueryable<Patient> patients = _context.Patients
-                .Where(p => p.IsVisible && p.IsActive)
-                .AsNoTracking();
+                .AsNoTracking(); // شيلنا شرط IsActive و IsVisible
 
             if (!string.IsNullOrEmpty(doctorId))
             {
                 patients = _context.DoctorPatients
                     .Where(dp => dp.Doctor.UserId == doctorId)
                     .Select(dp => dp.Patient)
-                        .Where(p => p.IsVisible && p.IsActive).OrderBy(p=>p.Name)
+                    .OrderBy(p => p.Name)
                     .AsNoTracking();
             }
             else if (!string.IsNullOrEmpty(caregiverId))
@@ -44,14 +42,12 @@ namespace Medication_Reminder_API.Services
                 patients = _context.PatientCaregivers
                     .Where(pc => pc.Caregiver.UserId == caregiverId)
                     .Select(pc => pc.Patient)
-                    .Where(p => p.IsVisible && p.IsActive)
                     .AsNoTracking();
             }
             else if (!string.IsNullOrEmpty(patientId))
             {
                 patients = patients.Where(p => p.UserId == patientId);
             }
-
 
             var totalCount = await patients.CountAsync();
             var totalPages = (int)Math.Ceiling(totalCount / (double)pageSize);
@@ -72,11 +68,10 @@ namespace Medication_Reminder_API.Services
             };
         }
 
-
         public async Task<List<PatientDto>> GetByIdsAsync(IEnumerable<int> ids)
         {
             return await _context.Patients
-                .Where(p => p.IsVisible && p.IsActive && ids.Contains(p.PatientID))
+                .Where(p => ids.Contains(p.PatientID)) // شيلنا IsActive و IsVisible
                 .AsNoTracking()
                 .ProjectTo<PatientDto>(_mapper.ConfigurationProvider)
                 .ToListAsync();
@@ -88,7 +83,7 @@ namespace Medication_Reminder_API.Services
                 return new List<PatientDto>();
 
             return await _context.Patients
-                .Where(p =>p.IsActive&&p.IsVisible&& EF.Functions.Like(p.Name, $"%{name}%"))
+                .Where(p => EF.Functions.Like(p.Name, $"%{name}%")) // شيلنا IsActive و IsVisible
                 .OrderBy(p => p.Name)
                 .AsNoTracking()
                 .ProjectTo<PatientDto>(_mapper.ConfigurationProvider)
@@ -151,17 +146,7 @@ namespace Medication_Reminder_API.Services
 
             return new ServiceResult { Success = true, Message = "Medication assigned successfully." };
         }
-        public async Task<PatientDto> ChangePatientStatusAsync(int patientId, UpdatePatientStatusDto dto)
-        {
-            var patient = await _context.Patients.FindAsync(patientId);
-            if (patient == null)
-                throw new KeyNotFoundException("Patient not found");
 
-            patient.IsActive = dto.IsActive;
-            patient.IsVisible = dto.IsVisible;
-            await _context.SaveChangesAsync();
-            return _mapper.Map<PatientDto>(patient); 
-        }
-
+        // شيلنا ChangePatientStatusAsync نهائي
     }
 }
