@@ -1,4 +1,5 @@
 ﻿using Medication_Reminder_API.Application.Interfaces;
+using Medication_Reminder_API.Services;
 using Microsoft.AspNetCore.Authorization;
 namespace Medication_Reminder_API.Api.Controllers
 {
@@ -52,9 +53,14 @@ namespace Medication_Reminder_API.Api.Controllers
         [Authorize(Roles = "Admin,Doctor")]
         public async Task<IActionResult> AssignMedicationToPatient(int patientId, int medicationId)
         {
+            // Assign medication once
             var result = await _patientService.AssignMedicationToPatientAsync(patientId, medicationId);
+
             if (!result.Success)
                 return BadRequest(result.Message);
+
+            // Generate doses for the new assignment
+            await _patientService.GenerateDosesForNewAssignmentAsync(patientId, medicationId);
 
             return Ok(result.Message);
         }

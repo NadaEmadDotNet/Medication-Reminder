@@ -27,7 +27,7 @@ namespace Medication_Reminder_API.Services
             int page = 1, int pageSize = 10)
         {
             IQueryable<Patient> patients = _context.Patients
-                .AsNoTracking(); // شيلنا شرط IsActive و IsVisible
+                .AsNoTracking();
 
             if (!string.IsNullOrEmpty(doctorId))
             {
@@ -146,7 +146,37 @@ namespace Medication_Reminder_API.Services
 
             return new ServiceResult { Success = true, Message = "Medication assigned successfully." };
         }
+        public async Task GenerateDosesForNewAssignmentAsync(int patientId, int medicationId)
+        {
+            var patientMedication = await _context.PatientMedications
+                .Include(pm => pm.Medication)
+                .Include(pm => pm.Patient)
+                .FirstOrDefaultAsync(pm => pm.PatientID == patientId && pm.MedicationID == medicationId);
 
-        // شيلنا ChangePatientStatusAsync نهائي
+            if (patientMedication == null) return;
+
+            var med = patientMedication.Medication;
+            var patient = patientMedication.Patient;
+
+            var now = DateTime.Now;
+            double interval = 24.0 / med.Frequency;
+
+            for (int i = 0; i < med.Frequency; i++)
+            {
+                var scheduledTime = now.AddHours(i * interval);
+                if (scheduledTime.Date != now.Date) break; 
+
+                _context.DoseLogs.Add(new DoseLog
+                {
+                    MedicationID = med.MedicationID,
+                    PatientID = patient.PatientID,
+                    Status = DoseStatus.Scheduled,
+                    ScheduledTime = scheduledTime,
+                    PatientName= patient.Name
+                });
+            }
+
+            await _context.SaveChangesAsync();
+        }
     }
 }

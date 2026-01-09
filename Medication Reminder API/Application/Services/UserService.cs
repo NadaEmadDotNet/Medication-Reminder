@@ -25,6 +25,7 @@ namespace Medication_Reminder_API.Services.Interfaces
             {
                 UserName = dto.Email,
                 Email = dto.Email,
+                FullName = dto.FullName
             };
 
             var result = await _userManager.CreateAsync(user, dto.Password);
@@ -92,7 +93,7 @@ namespace Medication_Reminder_API.Services.Interfaces
                     userDtos.Add(new UserDto
                     {
                         Id = user.Id,
-                        UserName = user.UserName,
+                        FullName = user.FullName,
                         Email = user.Email,
                         Role = roles.FirstOrDefault()
                     });
@@ -110,7 +111,7 @@ namespace Medication_Reminder_API.Services.Interfaces
 
             user.IsActive = dto.IsActive;
             user.IsVisible = dto.IsVisible;
-            user.TokenVersion++; // لمنع أي توكن قديم
+            user.TokenVersion++; // علشان يمنع التوكن القديم بعد م اليوزر يتشينج الباس
             await userManager.UpdateAsync(user);
 
             return new ServiceResult { Success = true, Message = "User status updated successfully" };

@@ -17,7 +17,6 @@
         protected string GetCurrentUserRole() =>
             User.FindFirst(ClaimTypes.Role)?.Value;
 
-        // ✨ التعديل هنا
         protected async Task<bool> CanAccessPatientAsync(int patientId)
         {
             var role = GetCurrentUserRole();

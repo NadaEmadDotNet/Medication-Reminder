@@ -64,7 +64,7 @@ namespace Medication_Reminder_API.Services
             };
 
             await _context.PatientCaregivers.AddAsync(patientCaregiver);
-            await _context.SaveChangesAsync(); 
+            await _context.SaveChangesAsync();
 
             return "Caregiver linked to patient successfully";
         }
@@ -100,28 +100,56 @@ namespace Medication_Reminder_API.Services
 
             int caregiverId = caregiver.CaregiverID;
 
-            var patients = await _context.PatientCaregivers
+            var patientsEntities = await _context.PatientCaregivers
                 .Where(pc => pc.CaregiverID == caregiverId)
                 .Select(pc => pc.Patient)
-                .ProjectTo<CaregiverPatientDTO>(_mapper.ConfigurationProvider)
                 .ToListAsync();
 
-            foreach (var patient in patients)
-            {
-                var medications = (await _medService
-                    .GetAllMedicationsForPatientAsync(patient.PatientID))
-                    .Select(m => new PatientMedicationDTO
-                    {
-                        MedicationID = m.MedicationID,
-                        Name = m.Name,
-                    })
-                    .ToList();
+            var result = new List<CaregiverPatientDTO>();
 
-                patient.Medications = medications;
+            foreach (var patient in patientsEntities)
+            {
+                var patientMeds = await _context.PatientMedications
+                    .Where(pm => pm.PatientID == patient.PatientID)
+                    .Select(pm => pm.Medication)
+                    .ToListAsync();
+
+                var medicationsDto = new List<CaregiverPatientMedicationDTO>();
+
+                foreach (var med in patientMeds)
+                {
+                    var doseLogs = await _context.DoseLogs
+                        .Where(d => d.MedicationID == med.MedicationID && d.PatientID == patient.PatientID)
+                        .Select(d => new DoseLogDTO
+                        {
+                            DoseLogID = d.DoseLogID,
+                            Status = d.Status
+                        })
+                        .ToListAsync();
+
+                    medicationsDto.Add(new CaregiverPatientMedicationDTO
+                    {
+                        MedicationID = med.MedicationID,
+                        Name = med.Name,
+                        Frequency = med.Frequency,
+                        DurationInDays = med.DurationInDays,
+                        Notes = med.Notes,
+                        DoseLogs = doseLogs
+                    });
+                }
+
+                result.Add(new CaregiverPatientDTO
+                {
+                    PatientID = patient.PatientID,
+                    Name = patient.Name,
+                    Age = patient.Age,
+                    Gender = patient.Gender,
+                    ChronicConditions = patient.ChronicConditions,
+                    Medications = medicationsDto
+                });
             }
 
-            return patients;
+            return result;
         }
-
     }
 }

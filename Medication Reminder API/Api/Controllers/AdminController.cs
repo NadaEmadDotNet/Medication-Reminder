@@ -38,7 +38,8 @@ namespace Medication_Reminder_API.Api.Controllers
                     user.Id,
                     user.UserName,
                     user.Email,
-                    dto.Role
+                    dto.Role,
+                    dto.FullName
                 });
             }
             catch (Exception ex)

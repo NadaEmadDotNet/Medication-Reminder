@@ -993,6 +993,10 @@
             "type": "integer",
             "format": "int32"
           },
+          "fullName": {
+            "type": "string",
+            "nullable": true
+          },
           "createdAt": {
             "type": "string",
             "format": "date-time"
@@ -1194,6 +1198,10 @@
           "medicationID": {
             "type": "integer",
             "format": "int32"
+          },
+          "patientName": {
+            "type": "string",
+            "nullable": true
           },
           "patientID": {
             "type": "integer",

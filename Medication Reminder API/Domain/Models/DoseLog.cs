@@ -7,7 +7,7 @@ namespace Medication_Reminder_API.Domain.Models
     {
         public int DoseLogID { get; set; }
         public int MedicationID { get; set; }
-
+       public string? PatientName { get; set; }
         public int PatientID { get; set; }
         public DateTime ScheduledTime { get; set; } // الوقت اللي المفروض ياخد فيه الجرعة
         public DateTime? TakenTime { get; set; }    // الوقت اللي فعليًا أخد فيه الجرعة

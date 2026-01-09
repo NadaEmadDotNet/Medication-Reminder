@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
+using static Medication_Reminder_API.Services.TestDoseGenerationService;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -56,6 +57,9 @@ builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddFluentValidationAutoValidation();
 builder.Services.AddValidatorsFromAssemblyContaining<MedicationValidator>();
 builder.Services.AddValidatorsFromAssemblyContaining<DoseLogDTOValidator>();
+//DoseGenerationBackgroundService reg
+
+builder.Services.AddHostedService<DoseGenerationBackgroundService>();
 
 // ===== 6) DI for Services =====
 builder.Services.AddScoped<IMedicationService, MedicationService>();
@@ -107,6 +111,7 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
+
 var app = builder.Build();
 
 // ===== Middleware =====
@@ -124,11 +129,11 @@ app.MapControllers();
 
 await CreateRolesAsync(app);
 
-// ===== Test Dose Generation ====
+//// ===== Test Dose Generation ====
 
-using var scope = app.Services.CreateScope();
-var testDoseService = scope.ServiceProvider.GetRequiredService<TestDoseGenerationService>();
-await testDoseService.ExecuteOnceAsync();
+//using var scope = app.Services.CreateScope();
+//var testDoseService = scope.ServiceProvider.GetRequiredService<TestDoseGenerationService>();
+//await testDoseService.ExecuteOnceAsync();
 app.Run();
 
 
@@ -156,7 +161,8 @@ static async Task CreateRolesAsync(WebApplication app)
             Email = adminEmail, 
             IsActive = true,
             IsVisible = true,
-            TokenVersion = 0
+            TokenVersion = 0,
+            FullName = "System Administrator",
         };
         var result = await userManager.CreateAsync(adminUser, adminPassword);
         if (result.Succeeded)

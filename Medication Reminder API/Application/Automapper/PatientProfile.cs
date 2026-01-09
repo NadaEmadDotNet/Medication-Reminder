@@ -9,7 +9,8 @@ namespace Medication_Reminder_API.Application.Automapper
         {
             CreateMap<PatientDto, Patient>();
             CreateMap<Patient, PatientDto>();
-        
+
+            CreateMap<PatientMedication, PatientMedicationDTO>();
         }
     }
 }
