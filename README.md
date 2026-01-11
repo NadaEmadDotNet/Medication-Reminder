@@ -1,31 +1,49 @@
-# Med-Patient Management System
+# 🚀 Medication Reminder API
 
-A backend ASP.NET Core Web API project to manage patients, caregivers, medications, and dose logs.  
-The system is designed so that caregivers (doctors) can track and manage only their assigned patients.
+A .NET Core Web API for managing patients, medications, and dose logs with a focus on clean architecture, security, and scalability. This project is a complete API built from scratch, including authentication, email confirmation, caching, pagination, and logging.
 
----
+⚡ Features
 
-## 🧾 Project Overview
+User Management: Support for Admin, Doctor, and Patient roles.
 
-This system provides:
+Authentication & Authorization:
 
-- Patient management with chronic conditions.
-- Caregiver (doctor) assignment and management *(feature for linking doctors to patients is in progress)*.
-- Medication tracking per patient with detailed dose logs.
-- JWT authentication with refresh token support for secure access.
-- Password management with change password functionality.
-- Admin functionality to pre-register users and manage accounts.
-- Logging of user activities and system events.
-- Efficient data retrieval using AutoMapper.
-- In-memory caching & pagination for optimized performance.
+JWT-based authentication.
 
----
+Refresh tokens for session management.
 
-## 🛠 Technologies Used
+Password change and token versioning.
 
--ASP.NET Core Web API
-- Entity Framework Core
-- AutoMapper
-- JWT Authentication with Refresh Tokens
-- SQL Server
-- Swagger for API documentation
+Email Confirmation: Users must confirm their email upon registration.
+
+CRUD Operations: Full management of Patients, Medications, and Dose Logs.
+
+Data Validation: Using FluentValidation for DTOs to ensure data integrity.
+
+Admin Actions: Activate/deactivate users.
+
+Logging: Key events and errors logged using ILogger.
+
+Caching: Frequently accessed endpoints are cached to improve performance.
+
+Pagination: Large datasets can be efficiently retrieved with pagination.
+
+Clean Architecture: Business logic separated from data access (Services, DTOs, Validators).
+
+🛠 Tech Stack
+
+Backend: .NET 7, ASP.NET Core Web API
+
+Authentication: Identity + JWT + Refresh Tokens
+
+ORM: Entity Framework Core
+
+Validation: FluentValidation
+
+Database: SQL Server / LocalDb
+
+Logging: ILogger
+
+Caching: In-memory cache
+
+Email: SMTP / Email Confirmation
